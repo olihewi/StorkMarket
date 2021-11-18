@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +15,14 @@ public class BodyJoint : MonoBehaviour
     
     public JointType type;
 
+    public bool IsCompatibleSlot(BodyJoint _joint)
+    {
+        return type == JointType.Attachment && _joint.type == JointType.Slot ||
+               type == JointType.BaseAttachment && _joint.type == JointType.BaseSlot;
+    }
     public bool CanAttach(BodyJoint _joint)
     {
-        return (type == JointType.Attachment && _joint.type == JointType.Slot ||
-                type == JointType.BaseAttachment && _joint.type == JointType.BaseSlot) &&
+        return IsCompatibleSlot(_joint) &&
                (transform.position - _joint.transform.position).magnitude < 0.5F;
     }
     public void Attach(BodyJoint _joint)
@@ -34,5 +39,11 @@ public class BodyJoint : MonoBehaviour
     public void Detach()
     {
         transform.parent.parent = null;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = type == JointType.Attachment || type == JointType.BaseAttachment ? Color.red : Color.blue;
+        Gizmos.DrawSphere(transform.position,0.25F);
     }
 }

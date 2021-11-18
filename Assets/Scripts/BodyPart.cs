@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BodyPart : MonoBehaviour
 {
-    private static List<BodyPart> BODY_PARTS = new List<BodyPart>();
+    public static List<BodyPart> BODY_PARTS = new List<BodyPart>();
     
     private void Start()
     {
@@ -26,7 +26,7 @@ public class BodyPart : MonoBehaviour
     
     // [Oli]: Joint Connection System //
     private bool held = false;
-    private List<BodyJoint> joints = new List<BodyJoint>();
+    [HideInInspector] public List<BodyJoint> joints = new List<BodyJoint>();
     private Camera mainCamera;
     private Rigidbody2D rb;
     private void OnMouseDown()
@@ -36,6 +36,7 @@ public class BodyPart : MonoBehaviour
         foreach (BodyJoint joint in joints)
         {
             joint.Detach();
+            JointRenderer.INSTANCE.DisplayValidJoints(joint);
         }
         rb.isKinematic = false;
     }
@@ -43,6 +44,7 @@ public class BodyPart : MonoBehaviour
     {
         held = false;
         rb.angularDrag = 0.05F;
+        JointRenderer.INSTANCE.Clear();
         
         foreach (BodyPart otherPart in BODY_PARTS)
         {
