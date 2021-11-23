@@ -14,6 +14,7 @@ public class BodyJoint : MonoBehaviour
     }
     
     public JointType type;
+    [HideInInspector] public bool isAttached = false;
 
     public bool IsCompatibleSlot(BodyJoint _joint)
     {
@@ -22,7 +23,7 @@ public class BodyJoint : MonoBehaviour
     }
     public bool CanAttach(BodyJoint _joint)
     {
-        return IsCompatibleSlot(_joint) &&
+        return !_joint.isAttached && IsCompatibleSlot(_joint) &&
                (transform.position - _joint.transform.position).magnitude < 0.5F;
     }
     public void Attach(BodyJoint _joint)
@@ -34,10 +35,19 @@ public class BodyJoint : MonoBehaviour
         rb.isKinematic = true;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0.0F;
+        _joint.isAttached = true;
     }
 
     public void Detach()
     {
+        if (transform.parent.parent != null)
+        {
+            BodyJoint _joint = transform.parent.parent.GetComponent<BodyJoint>();
+            if (_joint != null)
+            {
+                _joint.isAttached = false;
+            }
+        }
         transform.parent.parent = null;
     }
 
