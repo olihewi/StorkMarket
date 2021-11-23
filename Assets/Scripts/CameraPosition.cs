@@ -37,35 +37,70 @@ public class CameraPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.E))
         {
-            MoveCamera();
+            MoveCameraForwards();
         }
 
-        if(positionIndex >= cameraPositions.Length)
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            MoveCameraBackwards();
+        }
+
+        EdgeCases();
+        MoveCamera();
+
+    }
+
+    void EdgeCases()
+    {
+        if (positionIndex >= cameraPositions.Length)
         {
             positionIndex = 0;
         }
 
+        if (positionIndex < 0)
+        {
+            positionIndex = cameraPositions.Length - 1;
+        }
+    }
+
+    void MoveCamera()
+    {
         if (moveCamera)
         {
             transform.position = Vector3.Lerp(transform.position, cameraPositions[positionIndex].position, speed * Time.deltaTime);
         }
 
-        if(Vector3.Distance(transform.position, cameraPositions[positionIndex].position) <= 0.001f && !stop)
+        if (Vector3.Distance(transform.position, cameraPositions[positionIndex].position) <= 0.01f && !stop)
         {
             moveCamera = false;
             stop = true;
-            positionIndex++;
 
         }
-        
     }
 
-    public void MoveCamera()
+    public void MoveCameraForwards()
     {
+        if (!moveCamera)
+        {
+            positionIndex += 1;
+        }
+
         stop = false;
         moveCamera = true;
     }
+
+    public void MoveCameraBackwards()
+    {
+        if (!moveCamera)
+        {
+            positionIndex -= 1;
+        }
+        
+        stop = false;
+        moveCamera = true;
+    }
+
 }
