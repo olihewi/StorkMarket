@@ -134,4 +134,11 @@ public class BodyPart : MonoBehaviour
         }
         return result;
     }
+
+    public void SetAttributes(Attribute attributeAdded, float percentage)
+    {
+        PartAttributes newAttribute;
+        newAttribute = new PartAttributes { attribute = attributeAdded, percent = percentage};
+        attributes.Add(newAttribute);
+    }
 }
