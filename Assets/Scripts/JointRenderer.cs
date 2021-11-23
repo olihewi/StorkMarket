@@ -45,14 +45,18 @@ public class JointRenderer : MonoBehaviour
                 if (otherJoint.transform.parent == _joint.transform.parent) continue;
                 if (otherJoint.isAttached) continue;
                 if (!_joint.IsCompatibleSlot(otherJoint)) continue;
-                SpriteRenderer slotSprite = Instantiate(jointSpritePrefab, otherJoint.transform.position, Quaternion.identity, otherJoint.transform);
+                SpriteRenderer slotSprite = Instantiate(jointSpritePrefab, otherJoint.transform.position, otherJoint.transform.rotation, otherJoint.transform);
                 slotSprite.color = slotColour;
                 drawnJoints.Add(new KeyValuePair<BodyJoint, SpriteRenderer>(otherJoint,slotSprite));
             }
         }
-        SpriteRenderer attachmentSprite = Instantiate(jointSpritePrefab, _joint.transform.position, Quaternion.identity, _joint.transform);
-        attachmentSprite.color = attachmentColour;
-        drawnJoints.Add(new KeyValuePair<BodyJoint, SpriteRenderer>(_joint,attachmentSprite));
+
+        if (_joint.type == BodyJoint.JointType.Attachment || _joint.type == BodyJoint.JointType.BaseAttachment)
+        {
+            SpriteRenderer attachmentSprite = Instantiate(jointSpritePrefab, _joint.transform.position, _joint.transform.rotation, _joint.transform);
+            attachmentSprite.color = attachmentColour;
+            drawnJoints.Add(new KeyValuePair<BodyJoint, SpriteRenderer>(_joint,attachmentSprite));
+        }
     }
 
     public void Clear()

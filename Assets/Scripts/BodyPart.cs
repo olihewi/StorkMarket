@@ -89,8 +89,9 @@ public class BodyPart : MonoBehaviour
     {
         if (!held) return;
         Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = mousePos;
-        rb.velocity = Vector2.zero;
+        //transform.position = mousePos;
+        rb.velocity = (mousePos - new Vector2(transform.position.x, transform.position.y)) * 10.0F;
+        //rb.velocity = Vector2.zero;
         if (Input.GetMouseButton(1))
         {
             rb.AddTorque(-0.25F, ForceMode2D.Force);

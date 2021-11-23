@@ -28,7 +28,7 @@ public class BodyJoint : MonoBehaviour
     }
     public void Attach(BodyJoint _joint)
     {
-        transform.parent.position = _joint.type == JointType.BaseSlot ? _joint.transform.position : _joint.transform.position + (transform.parent.position - transform.position);
+        transform.parent.position = _joint.transform.position + (transform.parent.position - transform.position);
         transform.parent.parent = _joint.transform;
         Rigidbody2D rb = transform.parent.GetComponent<Rigidbody2D>();
         if (rb == null) return;
