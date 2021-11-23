@@ -15,11 +15,10 @@ public class PartAttributes
 public class BodyPart : MonoBehaviour
 {
     public static List<BodyPart> BODY_PARTS = new List<BodyPart>();
-    public PartAttributes[] attributes;
+    public List<PartAttributes> attributes = new List<PartAttributes>();
     
     private void Start()
     {
-        Debug.Log(attributes[0].attribute);
         BODY_PARTS.Add(this);
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody2D>();
