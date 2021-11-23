@@ -25,12 +25,11 @@ public class JointRenderer : MonoBehaviour
         {
             foreach (BodyJoint otherJoint in part.joints)
             {
-                if (_joint.IsCompatibleSlot(otherJoint))
-                {
-                    SpriteRenderer slotSprite = Instantiate(jointSpritePrefab, otherJoint.transform.position, Quaternion.identity, otherJoint.transform);
-                    slotSprite.color = slotColour;
-                    drawnJoints.Add(slotSprite);
-                }
+                if (otherJoint.transform.parent == _joint.transform.parent) continue;
+                if (!_joint.IsCompatibleSlot(otherJoint)) continue;
+                SpriteRenderer slotSprite = Instantiate(jointSpritePrefab, otherJoint.transform.position, Quaternion.identity, otherJoint.transform);
+                slotSprite.color = slotColour;
+                drawnJoints.Add(slotSprite);
             }
         }
         SpriteRenderer attachmentSprite = Instantiate(jointSpritePrefab, _joint.transform.position, Quaternion.identity, _joint.transform);
