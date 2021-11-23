@@ -1129,7 +1129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: []
+  attributes:
+  - attribute: {fileID: 11400000, guid: d0be63b89276f7b40a7b6d48b15f2945, type: 2}
+    percent: 1
   joints: []
 --- !u!70 &1757603622
 CapsuleCollider2D:
@@ -1506,7 +1508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: []
+  attributes:
+  - attribute: {fileID: 11400000, guid: 55361db76b45f864dbb09d7fdb46233e, type: 2}
+    percent: 0.5
+  - attribute: {fileID: 11400000, guid: d0be63b89276f7b40a7b6d48b15f2945, type: 2}
+    percent: 1
   joints: []
 --- !u!70 &2119540419
 CapsuleCollider2D:
