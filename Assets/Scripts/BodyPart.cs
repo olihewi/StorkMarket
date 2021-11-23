@@ -27,6 +27,7 @@ public class BodyPart : MonoBehaviour
     private void Update()
     {
         WhenHeld();
+        WhenAttached();
         // Testing scoring system, remove code at the end
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -95,6 +96,18 @@ public class BodyPart : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             rb.AddTorque(-0.25F, ForceMode2D.Force);
+        }
+    }
+
+    private void WhenAttached()
+    {
+        foreach (BodyJoint joint in joints)
+        {
+            if (joint.isAttached && (joint.type == BodyJoint.JointType.Attachment || joint.type == BodyJoint.JointType.BaseAttachment))
+            {
+                transform.position += (transform.parent.position - joint.transform.position) * (Time.deltaTime * 5.0F);
+                transform.RotateAround(joint.transform.position,Vector3.forward, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.z,transform.parent.rotation.eulerAngles.z + 180.0F) * Time.deltaTime * 5.0F);
+            }
         }
     }
 

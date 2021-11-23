@@ -28,7 +28,6 @@ public class BodyJoint : MonoBehaviour
     }
     public void Attach(BodyJoint _joint)
     {
-        transform.parent.position = _joint.transform.position + (transform.parent.position - transform.position);
         transform.parent.parent = _joint.transform;
         Rigidbody2D rb = transform.parent.GetComponent<Rigidbody2D>();
         if (rb == null) return;
@@ -36,6 +35,7 @@ public class BodyJoint : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0.0F;
         _joint.isAttached = true;
+        isAttached = true;
     }
 
     public void Detach()
@@ -49,6 +49,7 @@ public class BodyJoint : MonoBehaviour
             }
         }
         transform.parent.parent = null;
+        isAttached = false;
     }
 
     private void OnDrawGizmosSelected()
