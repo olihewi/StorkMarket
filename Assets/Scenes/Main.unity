@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  isAttached: 0
 --- !u!1 &616665704
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attributes: []
   joints: []
 --- !u!4 &664053386
 Transform:
@@ -627,6 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  isAttached: 0
 --- !u!1 &998103099
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +676,7 @@ MonoBehaviour:
   jointSpritePrefab: {fileID: 6300466222021199756, guid: 999d9e16b73b3a54badbea4275d12b21, type: 3}
   slotColour: {r: 0.32156864, g: 0.5137255, b: 0.8235295, a: 1}
   attachmentColour: {r: 0.8235295, g: 0.28235295, b: 0.2784314, a: 1}
+  hoverColour: {r: 0.43969128, g: 0.9056604, b: 0.19223925, a: 1}
 --- !u!1 &1039965029
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  isAttached: 0
 --- !u!1 &1062137558
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  isAttached: 0
 --- !u!1 &1309379991
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attributes: []
   joints: []
 --- !u!70 &1309379994
 CapsuleCollider2D:
@@ -978,6 +985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  isAttached: 0
 --- !u!1 &1563064411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,6 +1030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  isAttached: 0
 --- !u!1 &1737792299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  isAttached: 0
 --- !u!1 &1757603619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attributes: []
   joints: []
 --- !u!70 &1757603622
 CapsuleCollider2D:
@@ -1247,6 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  isAttached: 0
 --- !u!1 &1885674236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  isAttached: 0
 --- !u!1 &2119540415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,6 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attributes: []
   joints: []
 --- !u!70 &2119540419
 CapsuleCollider2D:

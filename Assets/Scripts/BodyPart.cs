@@ -27,6 +27,21 @@ public class BodyPart : MonoBehaviour
     private void Update()
     {
         WhenHeld();
+        // Testing scoring system, remove code at the end
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            foreach (BodyJoint joint in joints)
+            {
+                if (joint.type == BodyJoint.JointType.BaseSlot)
+                {
+                    List<PartAttributes> score = GetRating();
+                    foreach (PartAttributes attribute in score)
+                    {
+                        Debug.Log(attribute.attribute.name + ": " + attribute.percent);
+                    }
+                }
+            }
+        }
     }
     private void OnDestroy()
     {
@@ -80,5 +95,29 @@ public class BodyPart : MonoBehaviour
         {
             rb.AddTorque(-0.25F, ForceMode2D.Force);
         }
+    }
+
+    public List<PartAttributes> GetRating()
+    {
+        BodyPart[] children = GetComponentsInChildren<BodyPart>();
+        Dictionary<Attribute, float> ratings = new Dictionary<Attribute, float>();
+        foreach (BodyPart part in children)
+        {
+            foreach (PartAttributes partAttribute in part.attributes)
+            {
+                if (!ratings.ContainsKey(partAttribute.attribute))
+                {
+                    ratings.Add(partAttribute.attribute,0.0F);
+                }
+                ratings[partAttribute.attribute] += partAttribute.percent;
+            }
+        }
+        List<PartAttributes> result = new List<PartAttributes>();
+        foreach (KeyValuePair<Attribute, float> rating in ratings)
+        {
+            PartAttributes attribute = new PartAttributes {attribute = rating.Key, percent = rating.Value};
+            result.Add(attribute);
+        }
+        return result;
     }
 }
