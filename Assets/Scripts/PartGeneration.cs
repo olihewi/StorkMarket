@@ -5,6 +5,7 @@ using UnityEngine;
 public class PartGeneration : MonoBehaviour
 {
     public GameObject[] bodyParts;
+    public Attribute[] attributes;
     public float spawnRateMin, spawnRateMax;
     public bool canSpawn;
     public float curSpawnRate;
@@ -25,6 +26,7 @@ public class PartGeneration : MonoBehaviour
             {
                 curSpawnRate = Random.Range(spawnRateMin, spawnRateMax);
                 GameObject partClone = Instantiate(bodyParts[Random.Range(0, bodyParts.Length)], this.gameObject.transform);
+                partClone.GetComponent<BodyPart>().SetAttributes(attributes[Random.Range(0, attributes.Length)], Random.Range(0,100));
             }
         }
     }
