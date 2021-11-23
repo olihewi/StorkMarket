@@ -8,6 +8,7 @@ public class PartAttributes
 {
     public Attribute attribute;
     public float percent;
+    public Type type;
 }
 
 
@@ -138,10 +139,10 @@ public class BodyPart : MonoBehaviour
         return result;
     }
 
-    public void SetAttributes(Attribute attributeAdded, float percentage)
+    public void SetAttributes(Attribute attributeAdded, float percentage, Type typeAdded)
     {
         PartAttributes newAttribute;
-        newAttribute = new PartAttributes { attribute = attributeAdded, percent = percentage};
+        newAttribute = new PartAttributes { attribute = attributeAdded, percent = percentage, type = typeAdded};
         attributes.Add(newAttribute);
     }
 }
