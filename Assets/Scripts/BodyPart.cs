@@ -60,7 +60,10 @@ public class BodyPart : MonoBehaviour
         rb.angularDrag = 1.0F;
         foreach (BodyJoint joint in joints)
         {
-            joint.Detach();
+            if (joint.type == BodyJoint.JointType.Attachment || joint.type == BodyJoint.JointType.BaseAttachment)
+            {
+                   joint.Detach();
+            }
             JointRenderer.INSTANCE.DisplayValidJoints(joint);
         }
         rb.isKinematic = false;
