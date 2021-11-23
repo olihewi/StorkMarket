@@ -3,13 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class PartAttributes
+{
+    public Attribute attribute;
+    public float percent;
+}
+
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class BodyPart : MonoBehaviour
 {
     public static List<BodyPart> BODY_PARTS = new List<BodyPart>();
+    public PartAttributes[] attributes;
     
     private void Start()
     {
+        Debug.Log(attributes[0].attribute);
         BODY_PARTS.Add(this);
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody2D>();
