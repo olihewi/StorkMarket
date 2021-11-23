@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b08bd807290494f9ef5c0898b7368a, type: 3}
   m_Name: Alien
   m_EditorClassIdentifier: 
-  description: 
+  description: Alien
   sprite: {fileID: 0}
