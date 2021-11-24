@@ -23,6 +23,7 @@ public class BodyPart : MonoBehaviour
         BODY_PARTS.Add(this);
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
         joints.AddRange(GetComponentsInChildren<BodyJoint>());
     }
     private void Update()
@@ -55,15 +56,21 @@ public class BodyPart : MonoBehaviour
     [HideInInspector] public List<BodyJoint> joints = new List<BodyJoint>();
     private Camera mainCamera;
     private Rigidbody2D rb;
+    private SpriteRenderer sprite;
+    private static int maxOrderInLayer = 0;
     private void OnMouseDown()
     {
         held = true;
         rb.angularDrag = 1.0F;
         foreach (BodyJoint joint in joints)
         {
-            joint.Detach();
+            if (joint.type == BodyJoint.JointType.Attachment || joint.type == BodyJoint.JointType.BaseAttachment)
+            {
+                   joint.Detach();
+            }
             JointRenderer.INSTANCE.DisplayValidJoints(joint);
         }
+        sprite.sortingOrder = ++maxOrderInLayer;
         rb.isKinematic = false;
     }
     private void OnMouseUp()
