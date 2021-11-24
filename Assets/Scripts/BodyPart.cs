@@ -73,7 +73,7 @@ public class BodyPart : MonoBehaviour
         sprite.sortingOrder = ++maxOrderInLayer;
         rb.isKinematic = false;
     }
-    private void OnMouseUp()
+    public void OnMouseUp()
     {
         held = false;
         rb.angularDrag = 0.05F;

@@ -27,7 +27,7 @@ public class Hopper : MonoBehaviour
         if(other.gameObject.CompareTag("BodyPart"))
         {
             Debug.Log("Its a body part");
-           
+            other.gameObject.GetComponent<BodyPart>().OnMouseUp();
             pickedParts.Add(other.gameObject.GetComponent<BodyPart>());
             curParts++;
             if(curParts == maxParts)
