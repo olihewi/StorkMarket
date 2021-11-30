@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1007324794132486251}
   - component: {fileID: 8454595639784888430}
   - component: {fileID: 309309993}
+  - component: {fileID: -480249730851550709}
   m_Layer: 0
   m_Name: Conveyor Belt
   m_TagString: Untagged
@@ -110,3 +111,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-480249730851550709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432418327089830743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4021676a08608b4188c20a31b7daa43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  direction: {x: 0, y: 0}
+  onBelt: []

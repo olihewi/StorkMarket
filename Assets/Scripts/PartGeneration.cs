@@ -26,7 +26,7 @@ public class PartGeneration : MonoBehaviour
             if (curSpawnRate <= 0)
             {
                 curSpawnRate = Random.Range(spawnRateMin, spawnRateMax);
-                GameObject partClone = Instantiate(bodyParts[Random.Range(0, bodyParts.Length)], this.gameObject.transform);
+                GameObject partClone = Instantiate(bodyParts[Random.Range(0, bodyParts.Length)], transform.position, Quaternion.identity);
                 partClone.GetComponent<BodyPart>().SetAttributes(attributes[Random.Range(0, attributes.Length)], Random.Range(0, 100), types[Random.Range(0, types.Length)]);
             }
         }
