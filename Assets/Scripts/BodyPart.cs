@@ -52,10 +52,10 @@ public class BodyPart : MonoBehaviour
     }
     
     // [Oli]: Joint Connection System //
-    private bool held = false;
+    public bool held = false;
     [HideInInspector] public List<BodyJoint> joints = new List<BodyJoint>();
     private Camera mainCamera;
-    private Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
     private SpriteRenderer sprite;
     private static int maxOrderInLayer = 0;
     private void OnMouseDown()

@@ -8,6 +8,7 @@ public class Position
     // Use either Transform or Vector3, the Vector3 will automatically update if a Transform is present
     public Transform posObject;
     public Vector3 position;
+    public float cameraSize = 10.0F;
 
 }
 
@@ -21,10 +22,12 @@ public class CameraPosition : MonoBehaviour
     public bool moveCamera;
     bool stop;
     public float speed;
+    private Camera thisCamera;
 
     // Start is called before the first frame update
     void Start()
     {
+        thisCamera = GetComponent<Camera>();
         foreach (var pos in cameraPositions)
         {
             if (pos.posObject != null)
@@ -71,6 +74,7 @@ public class CameraPosition : MonoBehaviour
         if (moveCamera)
         {
             transform.position = Vector3.Lerp(transform.position, cameraPositions[positionIndex].position, speed * Time.deltaTime);
+            thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, cameraPositions[positionIndex].cameraSize, speed * Time.deltaTime);
         }
 
         if (Vector3.Distance(transform.position, cameraPositions[positionIndex].position) <= 0.01f && !stop)
