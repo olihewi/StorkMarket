@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 7c8c1a75720c8fa4caa6a97864df8cdc
+guid: 9bb794dcd68a67747b7a4c03995ffcda
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8032224423271836835
-    second: Hopper BG
+      213: 8678967714789782551
+    second: Mouse Hands_0
   - first:
-      213: 1808195688666239348
-    second: Hopper FG
+      213: -750595252639286985
+    second: Mouse Hands_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -38,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -74,7 +74,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -86,7 +86,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,43 +97,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hopper BG
+      name: Mouse Hands_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 269
-        width: 612
-        height: 397
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 17
+        width: 127
+        height: 90
+      alignment: 9
+      pivot: {x: 0.40483403, y: 0.4375398}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d535aae817ec78090800000000000000
-      internalID: -8032224423271836835
+      spriteID: 714f0294723e17870800000000000000
+      internalID: 8678967714789782551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hopper FG
+      name: Mouse Hands_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 612
-        height: 269
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 131
+        y: 27
+        width: 120
+        height: 70
+      alignment: 9
+      pivot: {x: 0.40162507, y: 0.25908166}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 471185b0660081910800000000000000
-      internalID: 1808195688666239348
+      spriteID: 739375438995595f0800000000000000
+      internalID: -750595252639286985
       vertices: []
       indices: 
       edges: []

@@ -72,8 +72,15 @@ public class BodyPart : MonoBehaviour
         }
         sprite.sortingOrder = ++maxOrderInLayer;
         rb.isKinematic = false;
+        Mouse.INSTANCE.Grab();
     }
-    public void OnMouseUp()
+    private void OnMouseUp()
+    {
+        Release();
+        Mouse.INSTANCE.Release();
+    }
+
+    public void Release()
     {
         held = false;
         rb.angularDrag = 0.05F;
@@ -99,7 +106,8 @@ public class BodyPart : MonoBehaviour
         if (!held) return;
         Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         //transform.position = mousePos;
-        rb.velocity = (mousePos - new Vector2(transform.position.x, transform.position.y)) * 10.0F;
+        Vector2 difference = mousePos - new Vector2(transform.position.x, transform.position.y);
+        rb.velocity = difference * 10.0F;
         //rb.velocity = Vector2.zero;
         if (Input.GetMouseButton(1))
         {
