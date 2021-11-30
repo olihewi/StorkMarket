@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 9121062259455392074}
   m_Layer: 6
   m_Name: Human Left Arm
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

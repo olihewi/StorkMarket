@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8550421407528130752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8550421407528130766}
+  - component: {fileID: 8550421407528130767}
+  m_Layer: 0
+  m_Name: Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8550421407528130766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550421407528130752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.52, y: 6.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8550421407528130767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550421407528130752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b9e86ecb2e3140a145a9c7f695141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyParts:
+  - {fileID: 727464149183308331, guid: 253ca77735332c24abc4b3c4196bf710, type: 3}
+  - {fileID: 2975922099383175571, guid: 97d4acf309fc9a24892217741833cfcd, type: 3}
+  - {fileID: 9121062259455392075, guid: 7188125f863c6d64b87c55bda14244c4, type: 3}
+  - {fileID: 5293137206560237767, guid: 18aa8388fe2df9043863763a590669ab, type: 3}
+  - {fileID: 942142846052156665, guid: 13a6dcf4f8786764daaf619923a71968, type: 3}
+  - {fileID: 6691201884856542909, guid: 50d25d01c62f85e4396cb53411f41563, type: 3}
+  - {fileID: 4190572674750067740, guid: 4c9319a2b2b75834f9d56714fe438dfd, type: 3}
+  - {fileID: 5046590532044249416, guid: 029d2dfc33cf41a4f8aeb901d3049386, type: 3}
+  - {fileID: 1549568923978896141, guid: aef97a90f7183be41b310dd2fd7ff7e3, type: 3}
+  - {fileID: 6211193810996657256, guid: 6f9da458cbb2cf744a1834d2a308c899, type: 3}
+  - {fileID: 3781215122920849760, guid: 7e46790482dbd24478da77ad6c3e0a51, type: 3}
+  - {fileID: 1857101205255286616, guid: ccc36aa7e38e4d445a252cd531af106b, type: 3}
+  - {fileID: 3136557363254816420, guid: 73df8806a6d98594896f30382d53a64f, type: 3}
+  attributes:
+  - {fileID: 11400000, guid: f44885aca54e92449a41058f5325bef5, type: 2}
+  - {fileID: 11400000, guid: 09fe5cc51dae9af4aba24a8f32fde53e, type: 2}
+  - {fileID: 11400000, guid: b0f37fcd304e1bb4cb7e4dd5f3955450, type: 2}
+  - {fileID: 11400000, guid: 1952376a99ac50a419b4306cbb7695aa, type: 2}
+  - {fileID: 11400000, guid: 55361db76b45f864dbb09d7fdb46233e, type: 2}
+  - {fileID: 11400000, guid: fff1d204729bd3f419c7ec9acfe924b3, type: 2}
+  - {fileID: 11400000, guid: 7902c12e9aac0484db8ed61508c4984c, type: 2}
+  - {fileID: 11400000, guid: d821ff1a655ef874d97e98106a97c92f, type: 2}
+  - {fileID: 11400000, guid: 6657e585ebf73e04397ce7d0e980d297, type: 2}
+  - {fileID: 11400000, guid: e2645eef1d6649742825d45cc0a3f785, type: 2}
+  - {fileID: 11400000, guid: f4a6599f4fd3f1b4688090e13a244db6, type: 2}
+  - {fileID: 11400000, guid: 46072dae9b62683478f2cafdbd378657, type: 2}
+  - {fileID: 11400000, guid: 5a916f5b166036b4da90e730d1790c6f, type: 2}
+  - {fileID: 11400000, guid: a294f205ab1cd554bb1dd66b48abbdb3, type: 2}
+  - {fileID: 11400000, guid: b0bd6ae880af9524ebda7cecd07c6fed, type: 2}
+  - {fileID: 11400000, guid: 93653171b6c46ec4c91f20677d363a5d, type: 2}
+  - {fileID: 11400000, guid: 1f420d6794a85764299935157079109d, type: 2}
+  types:
+  - {fileID: 11400000, guid: 6992d33f26592f744bb8ed4985c0ab6a, type: 2}
+  - {fileID: 11400000, guid: beb858bbe3ff7d448b6f035d1ea853ad, type: 2}
+  - {fileID: 11400000, guid: b16f68c774f772549872da0317ceed91, type: 2}
+  - {fileID: 11400000, guid: e72d2653d3bbf08409d4db5c6ff2b390, type: 2}
+  spawnRateMin: 3
+  spawnRateMax: 5
+  canSpawn: 0
+  curSpawnRate: 0
