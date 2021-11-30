@@ -58,6 +58,8 @@ public class BodyPart : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     private SpriteRenderer sprite;
     private static int maxOrderInLayer = 0;
+    private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
+    private static readonly int OutlineColour = Shader.PropertyToID("_OutlineColor");
     private void OnMouseDown()
     {
         held = true;
@@ -73,11 +75,22 @@ public class BodyPart : MonoBehaviour
         sprite.sortingOrder = ++maxOrderInLayer;
         rb.isKinematic = false;
         Mouse.INSTANCE.Grab();
+        sprite.material.SetColor(OutlineColour,new Color(1.0F,1.0F,0.0F,0.5F));
     }
     private void OnMouseUp()
     {
         Release();
         Mouse.INSTANCE.Release();
+    }
+
+    private void OnMouseEnter()
+    {
+        sprite.material.SetFloat(OutlineThickness,10.0F);
+    }
+
+    private void OnMouseExit()
+    {
+        sprite.material.SetFloat(OutlineThickness,0.0F);
     }
 
     public void Release()
@@ -100,6 +113,7 @@ public class BodyPart : MonoBehaviour
             }
             
         }
+        sprite.material.SetColor(OutlineColour,new Color(1.0F,1.0F,1.0F,0.5F));
     }
     private void WhenHeld()
     {
@@ -113,6 +127,7 @@ public class BodyPart : MonoBehaviour
         {
             rb.AddTorque(-0.25F, ForceMode2D.Force);
         }
+        sprite.material.SetFloat(OutlineThickness,10.0F);
     }
 
     private void WhenAttached()
