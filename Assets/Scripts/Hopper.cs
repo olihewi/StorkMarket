@@ -25,10 +25,8 @@ public class Hopper : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Entered Trigger");
         if(other.gameObject.CompareTag("BodyPart"))
         {
-            Debug.Log("Its a body part");
             other.gameObject.GetComponent<BodyPart>().Release();
             pickedParts.Add(other.gameObject.GetComponent<BodyPart>());
             curParts++;

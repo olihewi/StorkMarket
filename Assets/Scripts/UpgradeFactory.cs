@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class UpgradeFactory : MonoBehaviour
 {
     public GameObject conveyorBelt;
-    public Button button;
+    //public Button button;
     public GameObject partGenerator;
     public float distanceBetweenConveyers;
     int upgradeNum;
     public int maxUpgrades;
+    public Button addConveyorButton;
     
 
     // Start is called before the first frame update
@@ -38,6 +39,11 @@ public class UpgradeFactory : MonoBehaviour
             upgradeNum++;
             //Instantiate(partGenerator, new Vector2(partGenerator.transform.position.x, partGenerator.transform.position.y - upgradeNum * distanceBetweenConveyers), Quaternion.identity);
             GameObject newCon = Instantiate(conveyorBelt, new Vector2(conveyorBelt.transform.position.x, conveyorBelt.transform.position.y - upgradeNum * distanceBetweenConveyers), Quaternion.identity);
+            addConveyorButton.transform.Translate(0.0F,-distanceBetweenConveyers,0.0F);
+            if (upgradeNum >= maxUpgrades)
+            {
+                addConveyorButton.gameObject.SetActive(false);
+            }
             /*newCon.GetComponent<ConveyorScript>().speed = conveyorBelt.GetComponent<ConveyorScript>().speed;
             newCon.GetComponent<ConveyorScript>().direction = conveyorBelt.GetComponent<ConveyorScript>().direction;*/
         }

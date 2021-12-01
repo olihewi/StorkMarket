@@ -10,9 +10,9 @@ public class ConveyorScript : MonoBehaviour
     public Vector2 direction;
 
     public List<GameObject> onBelt;
-    
-   
-    
+
+
+
 
     // Update is called once per frame
   /*  void Update()

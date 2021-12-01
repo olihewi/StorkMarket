@@ -19,6 +19,11 @@ public class JointRenderer : MonoBehaviour
     {
         foreach (KeyValuePair<BodyJoint, SpriteRenderer> drawnJoint in drawnJoints)
         {
+            if (drawnJoint.Value == null)
+            {
+                drawnJoints.Remove(drawnJoint);
+                return;
+            }
             drawnJoint.Value.color = drawnJoint.Key.type == BodyJoint.JointType.Attachment || drawnJoint.Key.type == BodyJoint.JointType.BaseAttachment ? attachmentColour : slotColour;
         }
         for (int x = 0; x < drawnJoints.Count; x++)

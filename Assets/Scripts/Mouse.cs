@@ -8,6 +8,7 @@ public class Mouse : MonoBehaviour
     public static Mouse INSTANCE;
     public Sprite openSprite;
     public Sprite grabbingSprite;
+    public Sprite pointingSprite;
     private SpriteRenderer spriteRenderer;
     private Camera mainCamera;
     void Start()
@@ -26,6 +27,11 @@ public class Mouse : MonoBehaviour
     public void Release()
     {
         spriteRenderer.sprite = openSprite;
+    }
+
+    public void Point()
+    {
+        spriteRenderer.sprite = pointingSprite;
     }
 
     // Update is called once per frame
