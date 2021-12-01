@@ -19,7 +19,7 @@ public class BodyJoint : MonoBehaviour
     public bool IsCompatibleSlot(BodyJoint _joint)
     {
         return type == JointType.Attachment && _joint.type == JointType.Slot ||
-               type == JointType.BaseAttachment && _joint.type == JointType.BaseSlot;
+               (type == JointType.BaseAttachment || type == JointType.Attachment) && _joint.type == JointType.BaseSlot;
     }
     public bool CanAttach(BodyJoint _joint)
     {

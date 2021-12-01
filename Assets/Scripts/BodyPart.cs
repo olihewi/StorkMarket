@@ -98,6 +98,7 @@ public class BodyPart : MonoBehaviour
         held = false;
         rb.angularDrag = 0.05F;
         JointRenderer.INSTANCE.Clear();
+        sprite.material.SetColor(OutlineColour,new Color(1.0F,1.0F,1.0F,0.5F));
         
         foreach (BodyPart otherPart in BODY_PARTS)
         {
@@ -113,7 +114,6 @@ public class BodyPart : MonoBehaviour
             }
             
         }
-        sprite.material.SetColor(OutlineColour,new Color(1.0F,1.0F,1.0F,0.5F));
     }
     private void WhenHeld()
     {

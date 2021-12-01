@@ -23,22 +23,23 @@ public class UpgradeFactory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(upgradeNum == maxUpgrades && button.IsInteractable())
+        /*if(upgradeNum == maxUpgrades && button.IsInteractable())
         {
             button.interactable = false;
             button.gameObject.SetActive(false);
-        }
+        }*/
     }
 
+    [ContextMenu("Create Conveyor")]
     public void CreateConveyer()
     {
         if(upgradeNum < maxUpgrades)
         {
             upgradeNum++;
-            Instantiate(partGenerator, new Vector2(partGenerator.transform.position.x, partGenerator.transform.position.y - upgradeNum * distanceBetweenConveyers), Quaternion.identity);
+            //Instantiate(partGenerator, new Vector2(partGenerator.transform.position.x, partGenerator.transform.position.y - upgradeNum * distanceBetweenConveyers), Quaternion.identity);
             GameObject newCon = Instantiate(conveyorBelt, new Vector2(conveyorBelt.transform.position.x, conveyorBelt.transform.position.y - upgradeNum * distanceBetweenConveyers), Quaternion.identity);
-            newCon.GetComponent<ConveyorScript>().speed = conveyorBelt.GetComponent<ConveyorScript>().speed;
-            newCon.GetComponent<ConveyorScript>().direction = conveyorBelt.GetComponent<ConveyorScript>().direction;
+            /*newCon.GetComponent<ConveyorScript>().speed = conveyorBelt.GetComponent<ConveyorScript>().speed;
+            newCon.GetComponent<ConveyorScript>().direction = conveyorBelt.GetComponent<ConveyorScript>().direction;*/
         }
 
     }
