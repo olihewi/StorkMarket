@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
     public float decimalPlaces;
     public bool startTimerOnPlay;
     public bool stopTimerOnZero;
+    public bool timerFinished;
     
 
     // Start is called before the first frame update
@@ -50,6 +51,11 @@ public class Timer : MonoBehaviour
                 
                 timerIsActive = false;
             }
+        }
+
+        if(timer <= 0)
+        {
+            timerFinished = true;
         }
     }
 
