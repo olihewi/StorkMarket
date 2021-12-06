@@ -11,6 +11,7 @@ public class Button : MonoBehaviour
     private void OnMouseDown()
     {
         onPressed.Invoke();
+        Mouse.INSTANCE.Release();
     }
 
     private void OnMouseEnter()
