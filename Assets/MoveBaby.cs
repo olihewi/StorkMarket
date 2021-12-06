@@ -22,10 +22,15 @@ public class MoveBaby : MonoBehaviour
 
     public void GetStool(GameObject obj)
     {
-        Destroy(obj);
+        //obj.SetActive(false);
+        for (int i = 0; i < obj.transform.GetChild(0).childCount; i++)
+        {
+            Destroy(obj.transform.GetChild(0).GetChild(i).gameObject);
+        }
         stool = obj;
+
         GameObject newStool = Instantiate(stool, stoolPos.position, Quaternion.identity);
         newStool.GetComponent<Collider2D>().enabled = true;
-        //newStool.SetActive(true);
+        newStool.SetActive(true);
     }
 }
