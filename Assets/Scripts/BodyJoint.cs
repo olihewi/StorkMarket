@@ -14,7 +14,7 @@ public class BodyJoint : MonoBehaviour
     }
     
     public JointType type;
-    [HideInInspector] public bool isAttached = false;
+    public bool isAttached = false;
 
     public bool IsCompatibleSlot(BodyJoint _joint)
     {
@@ -24,7 +24,7 @@ public class BodyJoint : MonoBehaviour
     public bool CanAttach(BodyJoint _joint)
     {
         return !_joint.isAttached && IsCompatibleSlot(_joint) &&
-               (transform.position - _joint.transform.position).magnitude < 0.5F;
+               (new Vector2(transform.position.x,transform.position.y) - new Vector2(_joint.transform.position.x,_joint.transform.position.y)).magnitude < 0.5F;
     }
     public void Attach(BodyJoint _joint)
     {
@@ -57,4 +57,5 @@ public class BodyJoint : MonoBehaviour
         Gizmos.color = type == JointType.Attachment || type == JointType.BaseAttachment ? Color.red : Color.blue;
         Gizmos.DrawSphere(transform.position,0.25F);
     }
+    
 }

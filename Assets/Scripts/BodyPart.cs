@@ -139,7 +139,8 @@ public class BodyPart : MonoBehaviour
         Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         //transform.position = mousePos;
         Vector2 difference = mousePos - new Vector2(transform.position.x, transform.position.y);
-        rb.velocity = difference * 10.0F;
+        rb.velocity = Vector3.Lerp(rb.velocity, difference * 10.0F, Time.deltaTime * 5.0F);
+        //rb.velocity = Vector3.MoveTowards(rb.velocity, difference, Time.deltaTime * 500.0F);
         //rb.velocity = Vector2.zero;
         if (Input.GetMouseButton(1))
         {
@@ -193,5 +194,18 @@ public class BodyPart : MonoBehaviour
         PartAttributes newAttribute;
         newAttribute = new PartAttributes { attribute = attributeAdded, percent = percentage, type = typeAdded};
         attributes.Add(newAttribute);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        float velocity = rb.velocity.magnitude;
+        if (velocity > 1.0F)
+        {
+            audioSource.clip = pickupSound;
+            audioSource.volume = velocity / 2.0F;
+            audioSource.pitch = Random.Range(0.75F, 1.25F);
+            audioSource.Play();
+        }
+        
     }
 }

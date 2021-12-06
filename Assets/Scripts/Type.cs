@@ -7,5 +7,6 @@ public class Type : ScriptableObject
 {
     public string description;
     public Sprite sprite;
+    public float price;
 }
 
