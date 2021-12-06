@@ -92,12 +92,20 @@ public class BodyPart : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        sprite.material.SetFloat(OutlineThickness,10.0F);
+        if(sprite != null)
+        {
+            sprite.material.SetFloat(OutlineThickness, 10.0F);
+        }
+        
     }
 
     private void OnMouseExit()
     {
-        sprite.material.SetFloat(OutlineThickness,0.0F);
+        if(sprite != null)
+        {
+            sprite.material.SetFloat(OutlineThickness, 0.0F);
+        }
+        
     }
 
     public void Release()
@@ -146,8 +154,12 @@ public class BodyPart : MonoBehaviour
         {
             if (joint.isAttached && (joint.type == BodyJoint.JointType.Attachment || joint.type == BodyJoint.JointType.BaseAttachment))
             {
-                transform.position += (transform.parent.position - joint.transform.position) * (Time.deltaTime * 5.0F);
-                transform.RotateAround(joint.transform.position,Vector3.forward, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.z,transform.parent.rotation.eulerAngles.z + 180.0F) * Time.deltaTime * 5.0F);
+                if (joint.enabled)
+                {
+                    transform.position += (transform.parent.position - joint.transform.position) * (Time.deltaTime * 5.0F);
+                    transform.RotateAround(joint.transform.position, Vector3.forward, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.z, transform.parent.rotation.eulerAngles.z + 180.0F) * Time.deltaTime * 5.0F);
+                }
+
             }
         }
     }
