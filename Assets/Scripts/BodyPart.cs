@@ -17,6 +17,8 @@ public class BodyPart : MonoBehaviour
 {
     public static List<BodyPart> BODY_PARTS = new List<BodyPart>();
     public List<PartAttributes> attributes = new List<PartAttributes>();
+
+    private AudioSource audioSource;
     
     private void Start()
     {
@@ -25,6 +27,7 @@ public class BodyPart : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         joints.AddRange(GetComponentsInChildren<BodyJoint>());
+        audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -109,6 +112,7 @@ public class BodyPart : MonoBehaviour
                 {
                     if (!thisJoint.CanAttach(otherJoint)) continue;
                     thisJoint.Attach(otherJoint);
+                    audioSource.Play();
                     return;
                 }
             }
