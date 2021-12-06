@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +18,8 @@ public class BodyPart : MonoBehaviour
     public List<PartAttributes> attributes = new List<PartAttributes>();
 
     private AudioSource audioSource;
+    public AudioClip attachmentSound;
+    public AudioClip pickupSound;
     
     private void Start()
     {
@@ -79,6 +80,9 @@ public class BodyPart : MonoBehaviour
         rb.isKinematic = false;
         Mouse.INSTANCE.Grab();
         sprite.material.SetColor(OutlineColour,new Color(1.0F,1.0F,0.0F,0.5F));
+        audioSource.clip = pickupSound;
+        audioSource.pitch = Random.Range(1.0F, 1.5F);
+        audioSource.Play();
     }
     private void OnMouseUp()
     {
@@ -112,6 +116,8 @@ public class BodyPart : MonoBehaviour
                 {
                     if (!thisJoint.CanAttach(otherJoint)) continue;
                     thisJoint.Attach(otherJoint);
+                    audioSource.clip = attachmentSound;
+                    audioSource.pitch = Random.Range(0.75F, 1.25F);
                     audioSource.Play();
                     return;
                 }
