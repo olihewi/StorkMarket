@@ -410,9 +410,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 138399591}
+  - component: {fileID: 138399588}
   - component: {fileID: 138399590}
   - component: {fileID: 138399589}
-  - component: {fileID: 138399588}
   m_Layer: 0
   m_Name: Request
   m_TagString: Untagged
@@ -432,6 +432,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c340b8240f84945a5c829bb2baea95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requestFormats:
+  - prefix: -- PURCHASE RECEIPT --\n
+    type: "- 1x \\type Baby @ \xA395.49\\n"
+    attribute: '  - \attribute\n'
+    suffix: -- THANK YOU FOR SHOPPING AT TESCO --
+  - prefix: Dear Tesco,\nI would like to purchase a\n
+    type: \type Baby.\nI would like it to look\n
+    attribute: '- \attribute\n'
+    suffix: Thank you!
 --- !u!114 &138399589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,7 +461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WAHASfdAGdaf
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -479,7 +488,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.35
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -495,7 +504,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
