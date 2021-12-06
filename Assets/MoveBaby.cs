@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveBaby : MonoBehaviour
 {
-    
+    public static bool isInEvalScene;
     [HideInInspector] public GameObject stool;
     public Transform stoolPos;
 
@@ -30,6 +30,8 @@ public class MoveBaby : MonoBehaviour
         stool = obj;
 
         GameObject newStool = Instantiate(stool, stoolPos.position, Quaternion.identity);
+        EvalSceneManager.isInEvalScene = true;
+
         newStool.GetComponent<Collider2D>().enabled = true;
         newStool.SetActive(true);
     }

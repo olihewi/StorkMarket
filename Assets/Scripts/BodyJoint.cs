@@ -14,7 +14,9 @@ public class BodyJoint : MonoBehaviour
     }
     
     public JointType type;
-    public bool isAttached = false;
+    [HideInInspector] public bool isInEvalScene = false;
+    [HideInInspector] public bool isAttached = false;
+
 
     public bool IsCompatibleSlot(BodyJoint _joint)
     {

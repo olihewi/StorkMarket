@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,8 +19,8 @@ public class BodyPart : MonoBehaviour
     public List<PartAttributes> attributes = new List<PartAttributes>();
 
     private AudioSource audioSource;
-    public AudioClip attachmentSound;
-    public AudioClip pickupSound;
+
+    public bool isInEvalScene;
     
     private void Start()
     {
@@ -34,6 +35,14 @@ public class BodyPart : MonoBehaviour
     {
         WhenHeld();
         WhenAttached();
+
+
+
+        if (EvalSceneManager.isInEvalScene)
+        {
+            enabled = false;
+        }
+
         // Testing scoring system, remove code at the end
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -80,9 +89,6 @@ public class BodyPart : MonoBehaviour
         rb.isKinematic = false;
         Mouse.INSTANCE.Grab();
         sprite.material.SetColor(OutlineColour,new Color(1.0F,1.0F,0.0F,0.5F));
-        audioSource.clip = pickupSound;
-        audioSource.pitch = Random.Range(1.0F, 1.5F);
-        audioSource.Play();
     }
     private void OnMouseUp()
     {
@@ -124,8 +130,6 @@ public class BodyPart : MonoBehaviour
                 {
                     if (!thisJoint.CanAttach(otherJoint)) continue;
                     thisJoint.Attach(otherJoint);
-                    audioSource.clip = attachmentSound;
-                    audioSource.pitch = Random.Range(0.75F, 1.25F);
                     audioSource.Play();
                     return;
                 }
@@ -151,18 +155,23 @@ public class BodyPart : MonoBehaviour
 
     private void WhenAttached()
     {
-        foreach (BodyJoint joint in joints)
+        if (!EvalSceneManager.isInEvalScene)
         {
-            if (joint.isAttached && (joint.type == BodyJoint.JointType.Attachment || joint.type == BodyJoint.JointType.BaseAttachment))
+            foreach (BodyJoint joint in joints)
             {
-                if (joint.enabled)
+                if (joint.isAttached && (joint.type == BodyJoint.JointType.Attachment || joint.type == BodyJoint.JointType.BaseAttachment))
                 {
-                    transform.position += (transform.parent.position - joint.transform.position) * (Time.deltaTime * 5.0F);
-                    transform.RotateAround(joint.transform.position, Vector3.forward, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.z, transform.parent.rotation.eulerAngles.z + 180.0F) * Time.deltaTime * 5.0F);
-                }
+                    if(joint.enabled)
+                    {
+                        transform.position += (transform.parent.position - joint.transform.position) * (Time.deltaTime * 5.0F);
+                        transform.RotateAround(joint.transform.position, Vector3.forward, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.z, transform.parent.rotation.eulerAngles.z + 180.0F) * Time.deltaTime * 5.0F);
+                    }
 
+                   
+                }
             }
         }
+
     }
 
     public List<PartAttributes> GetRating()
