@@ -210,9 +210,9 @@ public class BodyPart : MonoBehaviour
         float velocity = rb.velocity.magnitude;
         if (velocity > 1.0F)
         {
-            audioSource.clip = pickupSound;
+            //audioSource.clip = pickupSound;
             audioSource.volume = velocity / 2.0F;
-            audioSource.pitch = Random.Range(0.75F, 1.25F);
+            //audioSource.pitch = Random.Range(0.75F, 1.25F);
             audioSource.Play();
         }
         
