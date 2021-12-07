@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 2197380673056055372}
   - component: {fileID: 3377874958158373511}
   - component: {fileID: 4826989274930116448}
+  - component: {fileID: 1265169185887310889}
   m_Layer: 0
   m_Name: LegRHuman
   m_TagString: Untagged
@@ -192,7 +193,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2197380673056055374}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.79707146, y: -2.8399029, z: 0.8872337}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -322,3 +323,23 @@ PolygonCollider2D:
       - {x: 1.1390519, y: -0.9999491}
       - {x: 1.2982941, y: -0.44579315}
       - {x: 1.324979, y: -0.01387497}
+--- !u!114 &1265169185887310889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197380673056055374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: []
+  pickupSound: {fileID: 8300000, guid: 2a0bc3df200484f49beba521d77e1802, type: 3}
+  attachmentSound: {fileID: 8300000, guid: aafd0e67383c71546850b5e3d021b0ae, type: 3}
+  isInEvalScene: 0
+  colourSprite: {fileID: 2197380673051899564}
+  held: 0
+  joints: []
+  rb: {fileID: 0}

@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 43374538f5e57ef46ba1c45cdc2df319, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 3473250980445467303}
   - component: {fileID: 2404260294920897098}
   - component: {fileID: 5869329145935635649}
+  - component: {fileID: 5921911337965515729}
   m_Layer: 0
   m_Name: BodyRobot
   m_TagString: Untagged
@@ -193,7 +194,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393432563554781052}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.436862, y: -1.1648827, z: 1.8456111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -328,6 +329,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5921911337965515729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393432563554781052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: []
+  pickupSound: {fileID: 8300000, guid: 2a0bc3df200484f49beba521d77e1802, type: 3}
+  attachmentSound: {fileID: 8300000, guid: aafd0e67383c71546850b5e3d021b0ae, type: 3}
+  isInEvalScene: 0
+  colourSprite: {fileID: 0}
+  held: 0
+  joints: []
+  rb: {fileID: 0}
 --- !u!1 &1393432563875364613
 GameObject:
   m_ObjectHideFlags: 0
