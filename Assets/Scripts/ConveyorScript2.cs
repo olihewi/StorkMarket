@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class ConveyorScript2 : MonoBehaviour
 {
+    public PartGeneration generator;
     private List<BodyPart> onConveyor = new List<BodyPart>();
+    public float speed = 2.0F;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,7 +36,7 @@ public class ConveyorScript2 : MonoBehaviour
             if (!bodyPart.held)
             {
                 //bodyPart.transform.Translate(0.0F,-bodyPart.rb.velocity.y * 2 * Time.deltaTime, 0.0F);
-                bodyPart.rb.velocity = Vector2.right * 2.0F;
+                bodyPart.rb.velocity = Vector2.right * speed;
             }
         }
     }

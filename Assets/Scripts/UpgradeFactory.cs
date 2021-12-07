@@ -6,7 +6,7 @@ using UnityEngine.UI;
 //Script to add new conveyor belt when certain conditions are met
 public class UpgradeFactory : MonoBehaviour
 {
-    public GameObject conveyorBelt;
+    public ConveyorScript2 conveyorBelt;
     //public Button button;
     public GameObject partGenerator;
     public float distanceBetweenConveyers;
@@ -38,7 +38,8 @@ public class UpgradeFactory : MonoBehaviour
         {
             upgradeNum++;
             //Instantiate(partGenerator, new Vector2(partGenerator.transform.position.x, partGenerator.transform.position.y - upgradeNum * distanceBetweenConveyers), Quaternion.identity);
-            GameObject newCon = Instantiate(conveyorBelt, new Vector2(conveyorBelt.transform.position.x, conveyorBelt.transform.position.y - upgradeNum * distanceBetweenConveyers), Quaternion.identity);
+            ConveyorScript2 newCon = Instantiate(conveyorBelt, new Vector2(conveyorBelt.transform.position.x, conveyorBelt.transform.position.y - upgradeNum * distanceBetweenConveyers), Quaternion.identity);
+            newCon.speed = 2.0F + upgradeNum * 0.5F;
             addConveyorButton.transform.Translate(0.0F,-distanceBetweenConveyers,0.0F);
             if (upgradeNum >= maxUpgrades)
             {
