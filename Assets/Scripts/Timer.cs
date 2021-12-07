@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Events;
 using TMPro;
 
 public class Timer : MonoBehaviour
@@ -15,6 +15,9 @@ public class Timer : MonoBehaviour
     public bool startTimerOnPlay;
     public bool stopTimerOnZero;
     public bool timerFinished;
+    public TextMeshPro babyCountText;
+    public TextMeshPro moneyText;
+    public UnityEvent timerEnd = new UnityEvent();
     
 
     // Start is called before the first frame update
@@ -56,6 +59,11 @@ public class Timer : MonoBehaviour
         if(timer <= 0)
         {
             timerFinished = true;
+            timerEnd.Invoke();
+            babyCountText.text = "YOU MADE " + GetComponent<BabyCount>().babyCount + " BABIES";
+            moneyText.text = "AND MADE  \n £(INSERT MONEY VALUE)";
+            Debug.Log("MONEY VALUE NEEDED HERE");
+            timer = maxTime;
         }
     }
 
@@ -67,5 +75,11 @@ public class Timer : MonoBehaviour
     public void stopTimer()
     {
         timerIsActive = false;
+    }
+
+    public void ResetTimer()
+    {
+        timerIsActive = true;
+        timer = maxTime;
     }
 }

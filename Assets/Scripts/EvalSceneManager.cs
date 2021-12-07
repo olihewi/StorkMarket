@@ -8,6 +8,8 @@ public static class EvalSceneManager
 
     public static int bodyRating = 0;
 
+    public static int babiesMade = 0;
+
     public static void getRating(List<PartAttributes> partRating)
     {
         List<PartAttributes> testList;
@@ -16,5 +18,10 @@ public static class EvalSceneManager
         {
             Debug.Log(item.percent);
         }
+    }
+
+    public static void IncrementBabyCount()
+    {
+        babiesMade++;
     }
 }

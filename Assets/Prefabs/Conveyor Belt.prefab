@@ -230,7 +230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
       propertyPath: spawnRateMin
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
       propertyPath: types.Array.size
