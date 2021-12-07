@@ -14,7 +14,7 @@ public class Hopper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        text.text = "Capacity:\n" + curParts + " / " + maxParts;
     }
 
     // Update is called once per frame
