@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Mechanical
   m_EditorClassIdentifier: 
   description: 
-  texture: {fileID: 2800000, guid: 5213a4695d40cba4b8d54a111139dd49, type: 3}
+  texture: {fileID: 2800000, guid: 14deda2afdcce2046b22ca70f2351199, type: 3}
