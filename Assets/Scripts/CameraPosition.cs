@@ -9,6 +9,7 @@ public class Position
     public Transform posObject;
     public Vector3 position;
     public float cameraSize = 10.0F;
+    public bool ignoreNext;
 
 }
 
@@ -87,9 +88,13 @@ public class CameraPosition : MonoBehaviour
 
     public void MoveCameraForwards()
     {
-        if (!moveCamera)
+        if (!moveCamera && !cameraPositions[positionIndex].ignoreNext)
         {
             positionIndex += 1;
+        }
+        else
+        {
+            positionIndex += 2;
         }
 
         stop = false;
@@ -103,6 +108,17 @@ public class CameraPosition : MonoBehaviour
             positionIndex -= 1;
         }
         
+        stop = false;
+        moveCamera = true;
+    }
+
+    public void MoveCameraTo(int pos)
+    {
+        if (!moveCamera)
+        {
+            positionIndex = pos;
+        }
+
         stop = false;
         moveCamera = true;
     }

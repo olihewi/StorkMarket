@@ -32,7 +32,7 @@ public class MoveBaby : MonoBehaviour
         stool = stoolParent.GetChild(0).gameObject;
         obj = stoolParent.GetChild(0).gameObject;
         originalStoolPos = obj.transform.position;
-        BodyPart[] oldParts = obj.transform.GetChild(0).GetChild(0).GetComponentsInChildren<BodyPart>();
+        BodyPart[] oldParts = obj.transform.GetChild(0).GetComponentsInChildren<BodyPart>();
         foreach (var item in oldParts)
         {
             Debug.Log(item.name);
