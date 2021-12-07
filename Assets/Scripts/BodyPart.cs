@@ -220,8 +220,10 @@ public class BodyPart : MonoBehaviour
 
     private void SetTextures()
     {
+        float power = (attributes[0].percent/100)-0.5f;
         colourSprite.material.SetTexture("Attribute1Tex", attributes[0].attribute.texture);
         colourSprite.material.SetTexture("Attribute2Tex", attributes[1].attribute.texture);
+        colourSprite.material.SetFloat("Power", power);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
