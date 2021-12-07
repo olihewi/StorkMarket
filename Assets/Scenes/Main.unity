@@ -1911,7 +1911,7 @@ MonoBehaviour:
     cameraSize: 7
     ignoreNext: 0
   - posObject: {fileID: 0}
-    position: {x: 0, y: -23, z: -10}
+    position: {x: 0, y: -22, z: -10}
     cameraSize: 5
     ignoreNext: 1
   - posObject: {fileID: 0}
