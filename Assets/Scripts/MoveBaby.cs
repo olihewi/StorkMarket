@@ -7,6 +7,7 @@ public class MoveBaby : MonoBehaviour
     public static bool isInEvalScene;
     [HideInInspector] public GameObject stool;
     public Transform stoolPos;
+    GameObject newStool;
 
     // Start is called before the first frame update
     void Start()
@@ -17,19 +18,23 @@ public class MoveBaby : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void GetStool(GameObject obj)
     {
-        //obj.SetActive(false);
-        for (int i = 0; i < obj.transform.GetChild(0).childCount; i++)
+        BodyPart[] oldParts = obj.transform.GetChild(0).GetChild(0).GetComponentsInChildren<BodyPart>();
+        foreach (var item in oldParts)
         {
-            Destroy(obj.transform.GetChild(0).GetChild(i).gameObject);
+            Debug.Log(item.name);
+            if(item != obj)
+            {
+                Destroy(item.gameObject);
+            }
+            
         }
         stool = obj;
 
-        GameObject newStool = Instantiate(stool, stoolPos.position, Quaternion.identity);
+        newStool = Instantiate(stool, stoolPos.position, Quaternion.identity);
         EvalSceneManager.isInEvalScene = true;
         BodyPart[] children = newStool.GetComponentsInChildren<BodyPart>();
         EvaluateBaby(children);
@@ -51,6 +56,15 @@ public class MoveBaby : MonoBehaviour
         foreach (PartAttributes attribute in score)
         {
             Debug.Log(attribute.attribute.name + ": " + attribute.percent);
+        }
+    }
+
+    public void DetroyNewStool()
+    {
+        EvalSceneManager.isInEvalScene = false;
+        if(newStool != null)
+        {
+            Destroy(newStool);
         }
     }
 
