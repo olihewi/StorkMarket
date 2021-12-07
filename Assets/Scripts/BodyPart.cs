@@ -21,6 +21,7 @@ public class BodyPart : MonoBehaviour
     private AudioSource audioSource;
 
     public bool isInEvalScene;
+
     
     private void Start()
     {
@@ -35,8 +36,6 @@ public class BodyPart : MonoBehaviour
     {
         WhenHeld();
         WhenAttached();
-
-
 
         //if (EvalSceneManager.isInEvalScene)
         //{

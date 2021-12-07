@@ -31,8 +31,27 @@ public class MoveBaby : MonoBehaviour
 
         GameObject newStool = Instantiate(stool, stoolPos.position, Quaternion.identity);
         EvalSceneManager.isInEvalScene = true;
-
+        BodyPart[] children = newStool.GetComponentsInChildren<BodyPart>();
+        EvaluateBaby(children);
         newStool.GetComponent<Collider2D>().enabled = true;
         newStool.SetActive(true);
     }
+
+    void EvaluateBaby(BodyPart[] children)
+    {
+        List<PartAttributes> score = new List<PartAttributes>();
+        for (int i = 0; i < children.Length; i++)
+        {
+            for (int j = 0; j < children[i].attributes.Capacity; j++)
+            {
+                score.Add(children[i].attributes[j]);
+            }
+
+        }
+        foreach (PartAttributes attribute in score)
+        {
+            Debug.Log(attribute.attribute.name + ": " + attribute.percent);
+        }
+    }
+
 }
