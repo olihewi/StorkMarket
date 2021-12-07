@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +18,8 @@ public class BodyPart : MonoBehaviour
     public List<PartAttributes> attributes = new List<PartAttributes>();
 
     private AudioSource audioSource;
+    public AudioClip pickupSound;
+    public AudioClip attachmentSound;
 
     public bool isInEvalScene;
 
@@ -88,6 +89,9 @@ public class BodyPart : MonoBehaviour
         rb.isKinematic = false;
         Mouse.INSTANCE.Grab();
         sprite.material.SetColor(OutlineColour,new Color(1.0F,1.0F,0.0F,0.5F));
+        audioSource.clip = pickupSound;
+        audioSource.pitch = Random.Range(1.0F, 1.5F);
+        audioSource.Play();
     }
     private void OnMouseUp()
     {
@@ -129,6 +133,8 @@ public class BodyPart : MonoBehaviour
                 {
                     if (!thisJoint.CanAttach(otherJoint)) continue;
                     thisJoint.Attach(otherJoint);
+                    audioSource.clip = attachmentSound;
+                    audioSource.pitch = Random.Range(0.75F, 1.25F);
                     audioSource.Play();
                     return;
                 }
@@ -163,7 +169,10 @@ public class BodyPart : MonoBehaviour
                     if(joint.enabled)
                     {
                         transform.position += (transform.parent.position - joint.transform.position) * (Time.deltaTime * 5.0F);
-                        transform.RotateAround(joint.transform.position, Vector3.forward, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.z, transform.parent.rotation.eulerAngles.z + 180.0F) * Time.deltaTime * 5.0F);
+                        //transform.rotation = Quaternion.RotateTowards(joint.transform.rotation, transform.parent.rotation, Time.deltaTime * -20.0F);
+                        transform.RotateAround(joint.transform.position, transform.up, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.y, transform.parent.rotation.eulerAngles.y) * Time.deltaTime * 5.0F);
+                        transform.RotateAround(joint.transform.position, transform.forward, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.z, transform.parent.rotation.eulerAngles.z + 180.0F) * Time.deltaTime * 5.0F);
+                        //transform.RotateAround(joint.transform.position, Vector3.right, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.x, transform.parent.rotation.eulerAngles.x) * Time.deltaTime * 5.0F);
                     }
 
                    
@@ -209,9 +218,9 @@ public class BodyPart : MonoBehaviour
         float velocity = rb.velocity.magnitude;
         if (velocity > 1.0F)
         {
-            //audioSource.clip = pickupSound;
+            audioSource.clip = pickupSound;
             audioSource.volume = velocity / 2.0F;
-            //audioSource.pitch = Random.Range(0.75F, 1.25F);
+            audioSource.pitch = Random.Range(0.75F, 1.25F);
             audioSource.Play();
         }
         
