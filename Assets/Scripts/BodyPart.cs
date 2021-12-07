@@ -23,6 +23,7 @@ public class BodyPart : MonoBehaviour
 
     public bool isInEvalScene;
 
+    public SpriteRenderer colourSprite;
     
     private void Start()
     {
@@ -37,7 +38,6 @@ public class BodyPart : MonoBehaviour
     {
         WhenHeld();
         WhenAttached();
-
         //if (EvalSceneManager.isInEvalScene)
         //{
         //    enabled = false;
@@ -207,11 +207,21 @@ public class BodyPart : MonoBehaviour
         return result;
     }
 
-    public void SetAttributes(Attribute attributeAdded, float percentage, Type typeAdded)
+    public void SetAttributes(Attribute attributeAdded1, float percentage1, Attribute attributeAdded2, float percentage2)
     {
-        PartAttributes newAttribute;
-        newAttribute = new PartAttributes { attribute = attributeAdded, percent = percentage, type = typeAdded};
-        attributes.Add(newAttribute);
+        PartAttributes newAttribute1;
+        newAttribute1 = new PartAttributes { attribute = attributeAdded1, percent = percentage1};
+        attributes.Add(newAttribute1);
+        PartAttributes newAttribute2;
+        newAttribute2 = new PartAttributes { attribute = attributeAdded2, percent = percentage2};
+        attributes.Add(newAttribute2);
+        SetTextures();
+    }
+
+    private void SetTextures()
+    {
+        colourSprite.material.SetTexture("Attribute1Tex", attributes[0].attribute.texture);
+        colourSprite.material.SetTexture("Attribute2Tex", attributes[1].attribute.texture);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -224,6 +234,5 @@ public class BodyPart : MonoBehaviour
             audioSource.pitch = Random.Range(0.75F, 1.25F);
             audioSource.Play();
         }
-        
     }
 }
