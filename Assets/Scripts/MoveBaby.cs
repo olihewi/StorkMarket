@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using TMPro;
+
 public class MoveBaby : MonoBehaviour
 {
     public static bool isInEvalScene;
     [HideInInspector] public GameObject stool;
     public GameObject stoolPrefab;
+    public Transform stoolParent;
     public Transform stoolPos;
     GameObject newStool;
     Vector3 originalStoolPos;
+    public GameObject hopper;
+    public TextMeshProUGUI hopperText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,8 @@ public class MoveBaby : MonoBehaviour
 
     public void GetStool(GameObject obj)
     {
+        stool = stoolParent.GetChild(0).gameObject;
+        obj = stoolParent.GetChild(0).gameObject;
         originalStoolPos = obj.transform.position;
         BodyPart[] oldParts = obj.transform.GetChild(0).GetChild(0).GetComponentsInChildren<BodyPart>();
         foreach (var item in oldParts)
@@ -38,6 +45,7 @@ public class MoveBaby : MonoBehaviour
         stool = obj;
 
         newStool = Instantiate(stool, stoolPos.position, Quaternion.identity);
+        newStool.transform.SetParent(stoolParent);
         //EvalSceneManager.isInEvalScene = true;
         BodyPart[] children = newStool.GetComponentsInChildren<BodyPart>();
         EvaluateBaby(children);
@@ -47,7 +55,7 @@ public class MoveBaby : MonoBehaviour
 
     void EvaluateBaby(BodyPart[] children)
     {
-        Destroy(stool);
+        Destroy(stoolParent.GetChild(0).gameObject);
         List<PartAttributes> score = new List<PartAttributes>();
         for (int i = 0; i < children.Length; i++)
         {
@@ -65,12 +73,11 @@ public class MoveBaby : MonoBehaviour
 
     public void DetroyNewStool()
     {
-        Instantiate(stoolPrefab, originalStoolPos, Quaternion.identity);
+        GameObject newStool = Instantiate(stoolPrefab, originalStoolPos, Quaternion.identity);
+        newStool.transform.SetParent(stoolParent);
         EvalSceneManager.isInEvalScene = false;
-        if(newStool != null)
-        {
-            Destroy(newStool);
-        }
+        Destroy(stoolParent.GetChild(0).gameObject);
+        hopper.GetComponent<Hopper>().resetText();
     }
 
 }
