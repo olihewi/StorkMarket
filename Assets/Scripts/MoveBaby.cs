@@ -6,8 +6,10 @@ public class MoveBaby : MonoBehaviour
 {
     public static bool isInEvalScene;
     [HideInInspector] public GameObject stool;
+    public GameObject stoolPrefab;
     public Transform stoolPos;
     GameObject newStool;
+    Vector3 originalStoolPos;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class MoveBaby : MonoBehaviour
 
     public void GetStool(GameObject obj)
     {
+        originalStoolPos = obj.transform.position;
         BodyPart[] oldParts = obj.transform.GetChild(0).GetChild(0).GetComponentsInChildren<BodyPart>();
         foreach (var item in oldParts)
         {
@@ -35,7 +38,7 @@ public class MoveBaby : MonoBehaviour
         stool = obj;
 
         newStool = Instantiate(stool, stoolPos.position, Quaternion.identity);
-        EvalSceneManager.isInEvalScene = true;
+        //EvalSceneManager.isInEvalScene = true;
         BodyPart[] children = newStool.GetComponentsInChildren<BodyPart>();
         EvaluateBaby(children);
         newStool.GetComponent<Collider2D>().enabled = true;
@@ -44,6 +47,7 @@ public class MoveBaby : MonoBehaviour
 
     void EvaluateBaby(BodyPart[] children)
     {
+        Destroy(stool);
         List<PartAttributes> score = new List<PartAttributes>();
         for (int i = 0; i < children.Length; i++)
         {
@@ -61,6 +65,7 @@ public class MoveBaby : MonoBehaviour
 
     public void DetroyNewStool()
     {
+        Instantiate(stoolPrefab, originalStoolPos, Quaternion.identity);
         EvalSceneManager.isInEvalScene = false;
         if(newStool != null)
         {
