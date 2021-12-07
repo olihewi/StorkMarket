@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stool: {fileID: 0}
+  stoolPrefab: {fileID: 2865507265045137093, guid: 3cae45a71fb345b40925880351c5784f, type: 3}
   stoolPos: {fileID: 805222815}
 --- !u!1 &138399587
 GameObject:
@@ -1180,6 +1181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stool: {fileID: 0}
+  stoolPrefab: {fileID: 0}
   stoolPos: {fileID: 805222815}
 --- !u!114 &246127470
 MonoBehaviour:
