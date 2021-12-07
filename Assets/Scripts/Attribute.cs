@@ -6,4 +6,5 @@ using UnityEngine;
 public class Attribute : ScriptableObject
 {
     public string description;
+    public Texture2D texture;
 }
