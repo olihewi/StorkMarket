@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8268661333844197540}
   - component: {fileID: 8268661333844197595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArmRBackgroundRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 8556988582153193655}
   - component: {fileID: 926550237183031210}
   - component: {fileID: 4272261548256968409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArmRRobot
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8268661335125551090}
   - component: {fileID: 8268661335125551089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArmRColouringRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3367674941877833908}
   - component: {fileID: 3367674941877833911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LegLColouringHuman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3367674941907419356}
   - component: {fileID: 3367674941907419359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LegLBackgroundHuman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,9 +179,9 @@ GameObject:
   - component: {fileID: 9078962641608721738}
   - component: {fileID: 2878756302847050685}
   - component: {fileID: 2684044450722188844}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LegLHuman
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1393432563343499803}
   - component: {fileID: 1393432563343499804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyBackgroundRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1393432563503841223}
   - component: {fileID: 1393432563503841240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyPainting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,9 +180,9 @@ GameObject:
   - component: {fileID: 2404260294920897098}
   - component: {fileID: 5869329145935635649}
   - component: {fileID: 5921911337965515729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyRobot
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1393432563875364614}
   - component: {fileID: 1393432563875364615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyColouringRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

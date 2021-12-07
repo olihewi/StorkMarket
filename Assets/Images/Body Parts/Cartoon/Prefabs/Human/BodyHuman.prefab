@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9124507470206045583}
   - component: {fileID: 9124507470206045580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyBackgroundHuman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9124507470417314030}
   - component: {fileID: 9124507470417314031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyColouringHuman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,9 +179,9 @@ GameObject:
   - component: {fileID: 6858093553263556003}
   - component: {fileID: 9157851822422054723}
   - component: {fileID: 8003006064483833004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyHuman
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

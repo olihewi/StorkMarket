@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4652950868289688508}
   - component: {fileID: 4652950868289688511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LegLBackgroundRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 7777924153290005924}
   - component: {fileID: 2848689100325394014}
   - component: {fileID: -468980124532568991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LegLRobot
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

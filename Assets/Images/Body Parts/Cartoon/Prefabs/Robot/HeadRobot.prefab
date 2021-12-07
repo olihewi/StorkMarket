@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5478061270329841695}
   - component: {fileID: 7724566057422823506}
   - component: {fileID: -464359035273763029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadRobot
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5975167651195702942}
   - component: {fileID: 5975167651195702943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadBackgroundRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5975167651395059352}
   - component: {fileID: 5975167651395059353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadColouringRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
