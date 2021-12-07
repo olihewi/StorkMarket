@@ -15,6 +15,7 @@ public class MoveBaby : MonoBehaviour
     Vector3 originalStoolPos;
     public GameObject hopper;
     public TextMeshProUGUI hopperText;
+    public Evaluation evaluation;
 
     // Start is called before the first frame update
     void Start()
@@ -46,9 +47,10 @@ public class MoveBaby : MonoBehaviour
 
         newStool = Instantiate(stool, stoolPos.position, Quaternion.identity);
         newStool.transform.SetParent(stoolParent);
+        evaluation.StartEvaluation(newStool.GetComponentsInChildren<BodyPart>()[1]);
         //EvalSceneManager.isInEvalScene = true;
-        BodyPart[] children = newStool.GetComponentsInChildren<BodyPart>();
-        EvaluateBaby(children);
+        //BodyPart[] children = newStool.GetComponentsInChildren<BodyPart>();
+        //EvaluateBaby(children);
         newStool.GetComponent<Collider2D>().enabled = true;
         newStool.SetActive(true);
     }
