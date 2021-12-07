@@ -170,8 +170,9 @@ public class BodyPart : MonoBehaviour
                     {
                         transform.position += (transform.parent.position - joint.transform.position) * (Time.deltaTime * 5.0F);
                         //transform.rotation = Quaternion.RotateTowards(joint.transform.rotation, transform.parent.rotation, Time.deltaTime * -20.0F);
-                        transform.RotateAround(joint.transform.position, transform.up, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.y, transform.parent.rotation.eulerAngles.y) * Time.deltaTime * 5.0F);
-                        transform.RotateAround(joint.transform.position, transform.forward, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.z, transform.parent.rotation.eulerAngles.z + 180.0F) * Time.deltaTime * 5.0F);
+                        transform.rotation = Quaternion.Slerp(transform.rotation, transform.parent.rotation * Quaternion.Inverse(joint.transform.localRotation * Quaternion.Euler(0.0F,0.0F,180.0F)), Time.deltaTime * 7.5F);
+                        //transform.RotateAround(joint.transform.position, transform.up, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.y, transform.parent.rotation.eulerAngles.y) * Time.deltaTime * 5.0F);
+                        //transform.RotateAround(joint.transform.position, transform.forward, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.z, transform.parent.rotation.eulerAngles.z + 180.0F) * Time.deltaTime * 5.0F);
                         //transform.RotateAround(joint.transform.position, Vector3.right, Mathf.DeltaAngle(joint.transform.rotation.eulerAngles.x, transform.parent.rotation.eulerAngles.x) * Time.deltaTime * 5.0F);
                     }
 
