@@ -268,8 +268,9 @@ MonoBehaviour:
   attributes: []
   pickupSound: {fileID: 8300000, guid: 2a0bc3df200484f49beba521d77e1802, type: 3}
   attachmentSound: {fileID: 8300000, guid: aafd0e67383c71546850b5e3d021b0ae, type: 3}
+  type: {fileID: 11400000, guid: 6992d33f26592f744bb8ed4985c0ab6a, type: 2}
   isInEvalScene: 0
-  colourSprite: {fileID: 0}
+  colourSprite: {fileID: 4652950868289688511}
   held: 0
   joints: []
   rb: {fileID: 0}

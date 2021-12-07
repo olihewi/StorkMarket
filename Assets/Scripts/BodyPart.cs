@@ -7,7 +7,6 @@ public class PartAttributes
 {
     public Attribute attribute;
     public float percent;
-    public Type type;
 }
 
 
@@ -20,7 +19,7 @@ public class BodyPart : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip pickupSound;
     public AudioClip attachmentSound;
-
+    public Type type;
     public bool isInEvalScene;
 
     public SpriteRenderer colourSprite;

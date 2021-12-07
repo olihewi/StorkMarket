@@ -339,6 +339,7 @@ MonoBehaviour:
   attributes: []
   pickupSound: {fileID: 8300000, guid: 2a0bc3df200484f49beba521d77e1802, type: 3}
   attachmentSound: {fileID: 8300000, guid: aafd0e67383c71546850b5e3d021b0ae, type: 3}
+  type: {fileID: 11400000, guid: e72d2653d3bbf08409d4db5c6ff2b390, type: 2}
   isInEvalScene: 0
   colourSprite: {fileID: 9124507470206045580}
   held: 0
