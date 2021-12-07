@@ -38,10 +38,10 @@ public class BodyPart : MonoBehaviour
 
 
 
-        if (EvalSceneManager.isInEvalScene)
-        {
-            enabled = false;
-        }
+        //if (EvalSceneManager.isInEvalScene)
+        //{
+        //    enabled = false;
+        //}
 
         // Testing scoring system, remove code at the end
         if (Input.GetKeyDown(KeyCode.Space))
