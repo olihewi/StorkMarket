@@ -23,6 +23,12 @@ public class Hopper : MonoBehaviour
         
     }
 
+    public void resetText()
+    {
+        text.text = "Capacity:\n" + "0" + " / " + maxParts;
+        curParts = 0;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("BodyPart"))
