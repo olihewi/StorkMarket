@@ -912,7 +912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
       propertyPath: attributes.Array.size
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
       propertyPath: bodyParts.Array.data[0]
@@ -962,6 +962,30 @@ PrefabInstance:
       propertyPath: attributes.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: d821ff1a655ef874d97e98106a97c92f, type: 2}
+    - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
+      propertyPath: attributes.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: fff1d204729bd3f419c7ec9acfe924b3, type: 2}
+    - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
+      propertyPath: attributes.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1952376a99ac50a419b4306cbb7695aa, type: 2}
+    - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
+      propertyPath: attributes.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: f44885aca54e92449a41058f5325bef5, type: 2}
+    - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
+      propertyPath: attributes.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: f4a6599f4fd3f1b4688090e13a244db6, type: 2}
+    - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
+      propertyPath: attributes.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: b0bd6ae880af9524ebda7cecd07c6fed, type: 2}
+    - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
+      propertyPath: attributes.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f420d6794a85764299935157079109d, type: 2}
     - target: {fileID: 8550421407528130767, guid: 56194f4377a1dad48a75ae8f620de64e, type: 3}
       propertyPath: bodyParts.Array.data[10]
       value: 
