@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Icey
   m_EditorClassIdentifier: 
   description: 
+  texture: {fileID: 2800000, guid: 6ffeb26d5459ed149a05addab5e7896e, type: 3}

@@ -57,13 +57,16 @@ public class Request : MonoBehaviour
     }
     private bool mouseOver = false;
 
+    private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
     private void OnMouseEnter()
     {
         mouseOver = true;
+        sprite.material.SetFloat(OutlineThickness, 4.0F);
     }
     private void OnMouseExit()
     {
         mouseOver = false;
+        sprite.material.SetFloat(OutlineThickness, 0.0F);
     }
     private void Update()
     {

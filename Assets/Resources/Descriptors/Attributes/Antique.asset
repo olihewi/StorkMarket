@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Antique
   m_EditorClassIdentifier: 
   description: 
+  texture: {fileID: 2800000, guid: 549aa7238531e24429719bcf08bdd4ac, type: 3}
