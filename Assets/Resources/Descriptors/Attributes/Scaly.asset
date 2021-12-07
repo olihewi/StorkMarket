@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Scaly
   m_EditorClassIdentifier: 
   description: 
+  texture: {fileID: 2800000, guid: c3bc22b9a9b16fc4895fc4469fa0321b, type: 3}
