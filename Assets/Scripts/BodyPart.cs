@@ -85,7 +85,7 @@ public class BodyPart : MonoBehaviour
             }
             JointRenderer.INSTANCE.DisplayValidJoints(joint);
         }
-        sprite.sortingOrder = ++maxOrderInLayer;
+        //sprite.sortingOrder = ++maxOrderInLayer;
         rb.isKinematic = false;
         Mouse.INSTANCE.Grab();
         sprite.material.SetColor(OutlineColour,new Color(1.0F,1.0F,0.0F,0.5F));

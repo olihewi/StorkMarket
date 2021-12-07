@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8078959171950688195}
   - component: {fileID: 4900235795240938503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadBackgroundCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4134376177165133781}
   - component: {fileID: 1684698087698416485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadColouringCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,6 +166,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3835813350836124083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4614846931009596844}
+  - component: {fileID: 2786975416228639271}
+  m_Layer: 6
+  m_Name: Neck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4614846931009596844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835813350836124083}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.05454254, y: -0.9379697, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1650933293061758534}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2786975416228639271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835813350836124083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a589f878653310249bd8bba3e0dd43b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  isInEvalScene: 0
+  isAttached: 0
 --- !u!1 &4541956622096201472
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,9 +224,10 @@ GameObject:
   - component: {fileID: 4496055484937360577}
   - component: {fileID: 4272036141364578093}
   - component: {fileID: 4272036141364578092}
-  m_Layer: 0
+  - component: {fileID: 934391255408569377}
+  m_Layer: 6
   m_Name: HeadCat
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +245,7 @@ Transform:
   m_Children:
   - {fileID: 4134376177165133781}
   - {fileID: 8078959171950688195}
+  - {fileID: 4614846931009596844}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -290,3 +338,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.04}
   serializedVersion: 2
   m_Radius: 1.26
+--- !u!114 &934391255408569377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4541956622096201472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: []
+  isInEvalScene: 0
+  held: 0
+  joints: []
+  rb: {fileID: 0}

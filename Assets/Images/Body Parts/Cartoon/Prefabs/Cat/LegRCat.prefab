@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1492624753665611140}
   - component: {fileID: 6456518457189983654}
   - component: {fileID: 8005114421207288069}
-  m_Layer: 0
+  - component: {fileID: -6086015918711832269}
+  m_Layer: 6
   m_Name: LegRCat
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3386255466859212773}
+  - {fileID: 4764204935435467086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162,6 +164,23 @@ PolygonCollider2D:
       - {x: 0.59, y: -0.91499996}
       - {x: 0.62, y: -0.885}
       - {x: 0.65, y: -0.78499997}
+--- !u!114 &-6086015918711832269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522775365026016067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: []
+  isInEvalScene: 0
+  held: 0
+  joints: []
+  rb: {fileID: 0}
 --- !u!1 &3178118893162748658
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3386255466859212773}
   - component: {fileID: 2006870366174073048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LegRColouringCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,3 +264,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4591823367248374935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4764204935435467086}
+  - component: {fileID: 7601711883258180802}
+  m_Layer: 6
+  m_Name: LegR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4764204935435467086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591823367248374935}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5104375, y: -0.027282715, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5501623003338254265}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7601711883258180802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591823367248374935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a589f878653310249bd8bba3e0dd43b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  isInEvalScene: 0
+  isAttached: 0

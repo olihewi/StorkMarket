@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5326770369231405360}
   - component: {fileID: 5453104765127274191}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArmLBackgroundCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +83,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4187925091561969997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4077966879839686795}
+  - component: {fileID: 2814171417478967587}
+  m_Layer: 6
+  m_Name: ArmL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4077966879839686795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4187925091561969997}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6545944, y: -0.31843853, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7696186996948786721}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2814171417478967587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4187925091561969997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a589f878653310249bd8bba3e0dd43b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  isInEvalScene: 0
+  isAttached: 0
 --- !u!1 &4554738833055027197
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6298042099987767836}
   - component: {fileID: 8230401577825576391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArmLColouringCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,9 +224,10 @@ GameObject:
   - component: {fileID: 6581129417013687855}
   - component: {fileID: 8197980391525991045}
   - component: {fileID: 4111768224367302912}
-  m_Layer: 0
+  - component: {fileID: -4558970838437693098}
+  m_Layer: 6
   m_Name: ArmLCat
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +245,7 @@ Transform:
   m_Children:
   - {fileID: 6298042099987767836}
   - {fileID: 5326770369231405360}
+  - {fileID: 4077966879839686795}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -322,3 +370,20 @@ PolygonCollider2D:
       - {x: 0.45499998, y: -0.48999998}
       - {x: 0.615, y: -0.48999998}
       - {x: 0.715, y: -0.37}
+--- !u!114 &-4558970838437693098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7607511093992748775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: []
+  isInEvalScene: 0
+  held: 0
+  joints: []
+  rb: {fileID: 0}
