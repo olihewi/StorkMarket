@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3367674941877833908}
   - component: {fileID: 3367674941877833911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LegLColouringHuman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3367674941907419356}
   - component: {fileID: 3367674941907419359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LegLBackgroundHuman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 43374538f5e57ef46ba1c45cdc2df319, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,9 +178,10 @@ GameObject:
   - component: {fileID: 3367674942220014678}
   - component: {fileID: 9078962641608721738}
   - component: {fileID: 2878756302847050685}
-  m_Layer: 0
+  - component: {fileID: 2684044450722188844}
+  m_Layer: 6
   m_Name: LegLHuman
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +193,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3367674942220014676}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6104784, y: -0.93844795, z: 0.8872337}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -221,7 +222,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fad40cea12572d1429d83c446a719236, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -323,3 +324,24 @@ PolygonCollider2D:
       - {x: -0.095, y: -0.435}
       - {x: 0.225, y: -0.155}
       - {x: 0.255, y: -0.125}
+--- !u!114 &2684044450722188844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3367674942220014676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: []
+  pickupSound: {fileID: 8300000, guid: 2a0bc3df200484f49beba521d77e1802, type: 3}
+  attachmentSound: {fileID: 8300000, guid: aafd0e67383c71546850b5e3d021b0ae, type: 3}
+  type: {fileID: 11400000, guid: e72d2653d3bbf08409d4db5c6ff2b390, type: 2}
+  isInEvalScene: 0
+  colourSprite: {fileID: 3367674941907419359}
+  held: 0
+  joints: []
+  rb: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4652950868289688508}
   - component: {fileID: 4652950868289688511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LegLBackgroundRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 43374538f5e57ef46ba1c45cdc2df319, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 4652950868401316551}
   - component: {fileID: 7777924153290005924}
   - component: {fileID: 2848689100325394014}
-  m_Layer: 0
+  - component: {fileID: -468980124532568991}
+  m_Layer: 6
   m_Name: LegLRobot
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +110,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4652950868401316549}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.216298, y: -3.3130379, z: 1.8456111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -252,3 +253,24 @@ PolygonCollider2D:
       - {x: -0.39499998, y: -0.875}
       - {x: -0.105, y: -0.815}
       - {x: -0.024573423, y: -0.7508688}
+--- !u!114 &-468980124532568991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4652950868401316549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: []
+  pickupSound: {fileID: 8300000, guid: 2a0bc3df200484f49beba521d77e1802, type: 3}
+  attachmentSound: {fileID: 8300000, guid: aafd0e67383c71546850b5e3d021b0ae, type: 3}
+  type: {fileID: 11400000, guid: 6992d33f26592f744bb8ed4985c0ab6a, type: 2}
+  isInEvalScene: 0
+  colourSprite: {fileID: 4652950868289688511}
+  held: 0
+  joints: []
+  rb: {fileID: 0}

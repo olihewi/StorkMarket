@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3218794762045221917}
   - component: {fileID: 3218794762045221916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArmLBackgroundRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 43374538f5e57ef46ba1c45cdc2df319, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 3218794762797384894}
   - component: {fileID: 6750735644783900412}
   - component: {fileID: 816291931263177643}
-  m_Layer: 0
+  - component: {fileID: 6270192773725007515}
+  m_Layer: 6
   m_Name: ArmLRobot
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +110,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3218794762797384864}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.4412975, y: -2.4681396, z: 1.8456111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -252,6 +253,27 @@ PolygonCollider2D:
       - {x: 0.82, y: -0.505}
       - {x: 0.82, y: -0.145}
       - {x: 0.7, y: -0.085}
+--- !u!114 &6270192773725007515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3218794762797384864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0896a67ed6e8438bea82790299a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: []
+  pickupSound: {fileID: 8300000, guid: 2a0bc3df200484f49beba521d77e1802, type: 3}
+  attachmentSound: {fileID: 8300000, guid: aafd0e67383c71546850b5e3d021b0ae, type: 3}
+  type: {fileID: 11400000, guid: 6992d33f26592f744bb8ed4985c0ab6a, type: 2}
+  isInEvalScene: 0
+  colourSprite: {fileID: 3218794762045221916}
+  held: 0
+  joints: []
+  rb: {fileID: 0}
 --- !u!1 &3218794763099082271
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3218794763099082270}
   - component: {fileID: 3218794763099082269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArmLColouringRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
