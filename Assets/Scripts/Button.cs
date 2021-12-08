@@ -8,18 +8,18 @@ public class Button : MonoBehaviour
 {
     public UnityEvent onPressed = new UnityEvent();
 
-    private void OnMouseDown()
+    protected virtual void OnMouseDown()
     {
         onPressed.Invoke();
         Mouse.INSTANCE.Release();
     }
 
-    private void OnMouseEnter()
+    protected virtual void OnMouseEnter()
     {
         Mouse.INSTANCE.Point();
     }
 
-    private void OnMouseExit()
+    protected virtual void OnMouseExit()
     {
         Mouse.INSTANCE.Release();
     }
