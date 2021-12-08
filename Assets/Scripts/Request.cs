@@ -27,7 +27,7 @@ public class Request : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        GenerateRequest(Random.Range(0, 3));
+        GenerateRequest(2);
         RequestFormat requestFormat = requestFormats[Random.Range(0, requestFormats.Length)];
 
         string text = requestFormat.prefix.Replace("\\n", "\n").Replace("\\an","aeiouAEIOU".IndexOf(requestedType.name[0])>=0 ? "an" : "a").Replace("\\price", value.ToString("c2"));

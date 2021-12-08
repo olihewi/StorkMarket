@@ -66,9 +66,10 @@ public class Evaluation : MonoBehaviour
         float priceMultiplier = bodyPartScore;
         priceMultiplier *= typeScore * 0.5F + 0.5F;
         priceMultiplier *= attributeScore * 0.25F + 0.75F;
-        textMesh.text += "Deductions: " + priceMultiplier.ToString("P") + "\n";
+        textMesh.text += "Deductions: " + (1.0F-priceMultiplier).ToString("P") + "\n";
         yield return new WaitForSeconds(0.25F);
         float finalPrice = _request.value * priceMultiplier;
         textMesh.text += "Total Profit: " + finalPrice.ToString("C");
+        MoneyManager.INSTANCE.money += finalPrice;
     }
 }
