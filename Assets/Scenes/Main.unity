@@ -618,6 +618,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1062137563}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: ResetTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &62366025
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1066,7 +1078,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000d91c4593
+  m_ApplyToSortingLayers: d91c4593
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1818,10 +1830,6 @@ MonoBehaviour:
     ignoreNext: 0
   - posObject: {fileID: 0}
     position: {x: 0, y: -23, z: -10}
-    cameraSize: 5
-    ignoreNext: 0
-  - posObject: {fileID: 0}
-    position: {x: 0, y: -35, z: -10}
     cameraSize: 5
     ignoreNext: 0
   positionIndex: 0
@@ -3114,7 +3122,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000939de8ad
+  m_ApplyToSortingLayers: d91c4593
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3843,7 +3851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669dc41398db9ce42bff51813e121fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 100
+  money: 150
   moneyLossPerSecond: 1.5
   moneyText: {fileID: 1225653350}
 --- !u!1001 &1069178128

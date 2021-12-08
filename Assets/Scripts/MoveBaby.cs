@@ -69,7 +69,7 @@ public class MoveBaby : MonoBehaviour
         }
         foreach (PartAttributes attribute in score)
         {
-            Debug.Log(attribute.attribute.name + ": " + attribute.percent);
+            //Debug.Log(attribute.attribute.name + ": " + attribute.percent);
         }
     }
 

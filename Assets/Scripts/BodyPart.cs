@@ -69,7 +69,7 @@ public class BodyPart : MonoBehaviour
     private Camera mainCamera;
     [HideInInspector] public Rigidbody2D rb;
     private SpriteRenderer sprite;
-    private static int maxOrderInLayer = 0;
+    //private static int maxOrderInLayer = 0;
     private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
     private static readonly int OutlineColour = Shader.PropertyToID("_OutlineColor");
     private void OnMouseDown()
