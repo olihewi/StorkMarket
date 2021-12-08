@@ -28,20 +28,11 @@ public class Request : MonoBehaviour
     private void Start()
     {
         GenerateRequest(2);
-        RequestFormat requestFormat = requestFormats[Random.Range(0, requestFormats.Length)];
-
-        string text = requestFormat.prefix.Replace("\\n", "\n").Replace("\\an","aeiouAEIOU".IndexOf(requestedType.name[0])>=0 ? "an" : "a").Replace("\\price", value.ToString("c2"));
-        text += requestFormat.type.Replace("\\type", requestedType.name).Replace("\\n", "\n").Replace("\\price", value.ToString("c2"));
-        foreach (Attribute attribute in requestedAttributes)
-        {
-            text += requestFormat.attribute.Replace("\\attribute", attribute.name).Replace("\\n", "\n");
-        }
-        text += requestFormat.suffix.Replace("\\n", "\n").Replace("\\price", value.ToString("c2"));
-        textMesh.text = text;
     }
 
     public void GenerateRequest(int numAttributes)
     {
+        requestedAttributes.Clear();
         List<Attribute> ATTRIBUTES = new List<Attribute>();
         ATTRIBUTES.AddRange(Resources.LoadAll<Attribute>("Descriptors"));
         List<Type> TYPES = new List<Type>();
@@ -54,6 +45,17 @@ public class Request : MonoBehaviour
             ATTRIBUTES.Remove(requestedAttributes[i]);
         }
         value = (requestedType.price + numAttributes) * Random.Range(0.8F, 1.2F);
+
+
+        RequestFormat requestFormat = requestFormats[Random.Range(0, requestFormats.Length)];
+        string text = requestFormat.prefix.Replace("\\n", "\n").Replace("\\an", "aeiouAEIOU".IndexOf(requestedType.name[0]) >= 0 ? "an" : "a").Replace("\\price", value.ToString("c2"));
+        text += requestFormat.type.Replace("\\type", requestedType.name).Replace("\\n", "\n").Replace("\\price", value.ToString("c2"));
+        foreach (Attribute attribute in requestedAttributes)
+        {
+            text += requestFormat.attribute.Replace("\\attribute", attribute.name).Replace("\\n", "\n");
+        }
+        text += requestFormat.suffix.Replace("\\n", "\n").Replace("\\price", value.ToString("c2"));
+        textMesh.text = text;
     }
     private bool mouseOver = false;
 

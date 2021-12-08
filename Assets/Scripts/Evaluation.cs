@@ -71,5 +71,6 @@ public class Evaluation : MonoBehaviour
         float finalPrice = _request.value * priceMultiplier;
         textMesh.text += "Total Profit: " + finalPrice.ToString("C");
         MoneyManager.INSTANCE.money += finalPrice;
+        _request.GenerateRequest(2);
     }
 }

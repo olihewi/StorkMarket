@@ -33,7 +33,9 @@ public class Hopper : MonoBehaviour
     {
         if(other.gameObject.CompareTag("BodyPart"))
         {
-            other.gameObject.GetComponent<BodyPart>().Release();
+            BodyPart bp = other.gameObject.GetComponent<BodyPart>();
+            if (pickedParts.Contains(bp)) return;
+            bp.Release();
             pickedParts.Add(other.gameObject.GetComponent<BodyPart>());
             curParts++;
             if (text != null)

@@ -53,11 +53,11 @@ public class MoveBaby : MonoBehaviour
         //EvaluateBaby(children);
         newStool.GetComponent<Collider2D>().enabled = true;
         newStool.SetActive(true);
+        Destroy(stoolParent.GetChild(0).gameObject);
     }
 
     void EvaluateBaby(BodyPart[] children)
     {
-        Destroy(stoolParent.GetChild(0).gameObject);
         List<PartAttributes> score = new List<PartAttributes>();
         for (int i = 0; i < children.Length; i++)
         {
